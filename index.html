@@ -1,26 +1,60 @@
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Mocha Tests</title>
-    <link href="lib/mocha.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
 </head>
+
 <body>
 
 
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <h1>Hero game starter</h1>
-  <section id="image">
-    <img id="inn" src="https://cdn.pixabay.com/photo/2012/05/07/16/57/food-48696_960_720.png" onclick="rest(hero)">
-    <img id="dagger" src="https://static.turbosquid.com/Preview/001190/801/IW/arya-dagger-3D-model_0.jpg" onclick="pickUpItem(hero, {'type': 'dagger', 'damage': 2})">
-    <img id="bag" src="https://steamuserimages-a.akamaihd.net/ugc/924792862053268921/A91438F34C1E2DF34937FB96FD0B07289A6B1ED1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" onclick="equipWeapon(hero)">
-  </section>
+  <h1>Hero game</h1>
+  <main>
+    <section id="createHero">
+      <div class="createHero">
+        <div class="input">
+          <label for="heroName">Name:</label>
+          <input type="text" id="heroName">
+        </div>
+        <div class="input">
+          <label for="heroWeapon">Weapon:</label>
+          <select id="heroWeapon">
+            <option value="Bow">Bow</option>
+            <option value="Sword">Sword</option>
+            <option value="Gun">Gun</option>
+          </select>
+        </div>
+        <button onclick="createHero()">Create hero</button>
+      </div>
+    </section>
+    <section id="heroInfo">
+      <div id="heroImage"></div>
+      <div id="heroStats"></div>
+    </section>
+    <div id="heroAction"></div>
+    <section id="enemy">
+      <div id="enemyImage"></div>
+      <div id="enemyStats"></div>
+    </section>
+    <div id="enemyAction"></div>
+    <section id="support">
+      <img id="inn" src="https://cdn.pixabay.com/photo/2012/05/07/16/57/food-48696_960_720.png" onclick="rest(hero)"
+        alt="inn">
+      <img id="dagger" src="https://static.turbosquid.com/Preview/001190/801/IW/arya-dagger-3D-model_0.jpg"
+        onclick="pickUpItem(hero, {'type': 'dagger', 'damage': 2})" alt="dagger">
+      <img id="bag" src="https://steamuserimages-a.akamaihd.net/ugc/924792862053268921/A91438F34C1E2DF34937FB96FD0B07289A6B1ED1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+        onclick="equipWeapon(hero)" alt="bag">
+    </section>
+  </main>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
   <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
   <script src="lib/chai.js"></script>
@@ -31,4 +65,5 @@
   <script src="lib/game_logic.test.js"></script>
 
 </body>
+
 </html>
