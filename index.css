@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    margin: 4rem;
+}
+
+img {
+    display: block;
+    margin: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 180px;
+    max-width: 180px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+button {
+    font: inherit;
+    font-weight: bold;
+    border: solid 1px transparent;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: brown;
+    background-color: yellowgreen;
+}
